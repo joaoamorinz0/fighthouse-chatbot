@@ -1,6 +1,6 @@
-##CHATBOT FIGHTHOUSE ACADEMY
+## CHATBOT FIGHTHOUSE ACADEMY
 
-#Atualmente o projeto já conta com:
+# Atualmente o projeto já conta com:
 
 ```
 menu automático
@@ -11,7 +11,7 @@ captura de nome, telefone e modalidade
 armazenamento temporário dos leads
 ```
 
-O projeto está sendo organizado com fins de escalabilidade, portante, futuramente ele poderá integrar:
+# O projeto está sendo organizado com fins de escalabilidade, portante, futuramente ele poderá integrar:
 
 ```
 WhatsApp
