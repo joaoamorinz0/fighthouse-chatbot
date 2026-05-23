@@ -1,6 +1,7 @@
 import json
 import os
 
+from datetime import datetime
 from flow.menu import mostrar_menu
 from flow.horarios_flow import mostrar_horarios
 from flow.valores_flow import menu_valores
@@ -71,11 +72,13 @@ def salvar_lead(dados_usuario):
     leads = carregar_leads()
 
     novo_lead = {
-        "nome": dados_usuario.get("nome"),
-        "telefone": dados_usuario.get("telefone"),
-        "modalidade": dados_usuario.get("modalidade"),
-        "status": "novo"
-    }
+    "id": len(leads) + 1,
+    "nome": dados_usuario.get("nome"),
+    "telefone": dados_usuario.get("telefone"),
+    "modalidade": dados_usuario.get("modalidade"),
+    "status": "novo",
+    "criado_em": datetime.now().strftime("%d/%m/%Y %H:%M")
+}
 
     leads.append(novo_lead)
 
