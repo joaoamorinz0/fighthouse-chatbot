@@ -15,6 +15,7 @@ from flow.matricula_flow import (
 
 
 CAMINHO_USUARIOS = "data/usuarios.json"
+CAMINHO_LEADS = "data/leads.json"
 
 
 def carregar_usuarios():
@@ -52,6 +53,39 @@ def criar_usuario_se_nao_existir(usuario_id):
         }
 
         salvar_usuarios()
+
+def carregar_leads():
+    try:
+        with open(CAMINHO_LEADS, "r", encoding="utf-8") as arquivo:
+            return json.load(arquivo)
+
+    except FileNotFoundError:
+        return []
+
+    except json.JSONDecodeError:
+        return []
+
+def salvar_lead(dados_usuario):
+    os.makedirs("data", exist_ok=True)
+
+    leads = carregar_leads()
+
+    novo_lead = {
+        "nome": dados_usuario.get("nome"),
+        "telefone": dados_usuario.get("telefone"),
+        "modalidade": dados_usuario.get("modalidade"),
+        "status": "novo"
+    }
+
+    leads.append(novo_lead)
+
+    with open(CAMINHO_LEADS, "w", encoding="utf-8") as arquivo:
+        json.dump(
+            leads,
+            arquivo,
+            ensure_ascii=False,
+            indent=4
+        )
 
 
 def processar_mensagem(usuario_id, mensagem):
@@ -147,6 +181,8 @@ Exemplo: 61999999999
 
         if modalidade:
             dados_usuario["modalidade"] = modalidade
+
+            salvar_lead(dados_usuario)
 
             resposta = f"""
 ✅ MATRÍCULA INICIADA

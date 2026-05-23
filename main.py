@@ -1,12 +1,11 @@
 from core.chatbot import processar_mensagem
 
 while True:
+    try:
+        mensagem = input("Cliente: ")
+    except EOFError:
+        break
 
-    mensagem = input("Cliente: ")
-
-    resposta = processar_mensagem(
-        "joao",
-        mensagem
-    )
+    resposta = processar_mensagem("joao", mensagem)
 
     print(f"\nBot: {resposta}\n")

@@ -1,9 +1,17 @@
 {
-  "61999999999": {
-    "estado": "menu",
-    "dados": {
-      "nome": "João",
-      "modalidade": "Kickboxing"
+    "61999999999": {
+        "estado": "menu",
+        "dados": {
+            "nome": "João",
+            "modalidade": "Kickboxing"
+        }
+    },
+    "joao": {
+        "estado": "menu",
+        "dados": {
+            "nome": "Joao victor",
+            "telefone": "61993014598",
+            "modalidade": "Boxe"
+        }
     }
-  }
 }
