@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# JSON temporário
+backend/data/*.json
+
+# Node
+node_modules/
+dist/
+
+# Vite
+frontend/node_modules/
+frontend/dist/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
